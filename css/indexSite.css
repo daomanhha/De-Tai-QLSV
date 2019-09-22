@@ -6,15 +6,66 @@ body{
 	height: 100vh;
 	overflow: hidden;
 }
+/*navigation*/
 .navigation{
 	width: 100%;
 	height: 100px;
+	display: flex;
+	justify-content: space-between;
 	border:1px solid pink;
 }
 .navigation > .logo{
 	margin-left: 30px;
 	display: inline-block;
 }
+.navigation > .user {
+	display: inline-block;
+	    height: 50px;
+	position: relative;
+	cursor: pointer;
+	margin-right: 100px;
+}
+.navigation > .user > .user-control{
+	position: absolute;
+	left: 20px;
+	top: 70px;
+	visibility: hidden;
+	/*z-index: -1000;*/
+	transition: all 0.2s linear;
+}
+.navigation > .user > .user-control.active{
+	top: 56px;
+	/*z-index: 1;*/
+	visibility: visible;
+}
+.navigation > .user > .user-control ul{
+	list-style-type: none;
+	background-color: pink;
+}
+.navigation > .user > .user-control ul:before{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: pink;
+	left: 40px;
+	top: -10px;
+	clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+.navigation > .user > .user-control ul li{
+	width: 100px;
+	height: 40px;
+	text-align: left;
+	border-bottom: 1px solid #000;
+}
+.navigation > .user > .user-control ul li a{
+	text-decoration: none;
+	line-height: 40px;
+	display: block;
+	font-size: 15px;
+	color: #000;
+}
+/*content*/
 .content{
 	display: flex;
 	height: 100vh;
@@ -78,4 +129,20 @@ body{
 	display: flex;
 	width: 400px;
 	justify-content: space-between;
+}
+/*responsive*/
+@media screen and (max-width: 768px){
+	.menu-left{
+		display: none;
+	}
+	.menu-right{
+		margin-left: 0;
+		width: 100%;
+	}
+	.menu-right > .information > .infor{
+		width: 100%;
+	}
+	.menu-right > .information > .infor h2{
+		font-size: 15px;
+	}
 }
