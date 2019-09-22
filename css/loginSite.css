@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	overflow: hidden;
+}
+.form-login{
+	position: absolute;
+	width: 400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.form-group{
+	position: relative;
+	margin-top: 40px;
+}
+.form-group i{
+	position: absolute;
+    left: -26px;
+    top: 7px;
+}
+label[for='exampleInputEmail1'],
+label[for='exampleInputPassword1']{
+	position: absolute;
+	transition: all 0.5s linear;
+	font-size: 20px;
+	font-weight: 400;
+	left: 20px; 
+	top: 2px;
+}
+.activeInput{
+	left : 0px!important;
+	font-size: 15px!important;
+	top: -20px!important;
+}
+input[class='form-control']{
+	box-shadow: none!important;
+	border-radius: 0px;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #000;
+}
+button[type = 'submit']{
+	width: 100%;
+	font-size: 23px;
+	border-radius: 25px;
+	background-color: pink;
+	border:none;
+	transition: all 0.5s linear;
+}
+/*responsive*/
+@media screen and (max-width: 768px){
+	.form-login{
+		width: 234px;
+	}
+}
